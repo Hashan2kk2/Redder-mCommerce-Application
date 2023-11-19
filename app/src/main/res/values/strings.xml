@@ -10,4 +10,10 @@
     <string name="signup_link">Don\'t have an Account?</string>
     <string name="signupLink">Sign Up</string>
     <string name="continueGoogle">Continue with Google</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="already_have_an_account">Already have an account?</string>
+    <string name="sign_in">Sign In</string>
+    <string name="goto_signup">Sign Up</string>
+    <string name="last_name">Last Name</string>
+    <string name="first_name">First Name</string>
 </resources>
