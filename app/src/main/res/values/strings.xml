@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Redder</string>
+    <string name="orangeIcon">orangeIcon</string>
+    <string name="whiteIcon">whiteIcon</string>
+    <string name="logo_dark">logo_dark</string>
+    <string name="goto_signin">Signin</string>
+    <string name="email_address">Email Address</string>
+    <string name="login_btn">Login</string>
+    <string name="enter_your_password">Enter your Password</string>
+    <string name="signup_link">Don\'t have an Account?</string>
+    <string name="signupLink">Sign Up</string>
+    <string name="continueGoogle">Continue with Google</string>
+</resources>
