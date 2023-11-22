@@ -10,12 +10,12 @@
         android:id="@+id/imageView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="100dp"
+        android:contentDescription="@string/logo_dark"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo_dark"
-        android:contentDescription="@string/logo_dark" />
+        app:srcCompat="@drawable/logo_dark" />
 
     <EditText
         android:id="@+id/emailEditText"
@@ -89,24 +89,98 @@
 
         <TextView
             android:id="@+id/textView2"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/signupLink"
-            android:textColor="@color/orange" />
+            android:textColor="#DD2C00" />
     </LinearLayout>
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="0dp"
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="24dp"
-        android:text="@string/continueGoogle"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        android:drawableStart="@drawable/logo_light"/>
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+        <ImageButton
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:background="@color/white"
+            android:scaleType="fitCenter"
+            android:src="@drawable/facebook" />
+
+        <ImageButton
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:background="@color/white"
+            android:scaleType="fitCenter"
+            android:scaleX="1.5"
+            android:scaleY="1.5"
+            android:src="@drawable/google" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="By Continuing you agree to our"
+            android:textAlignment="textEnd" />
+
+        <TextView
+            android:id="@+id/termsAndConditions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text=" Terms and conditions"
+            android:textAlignment="textStart"
+            android:textColor="@color/orange" />
+
+
+    </LinearLayout>
+
+
+    <!--    <ImageButton-->
+<!--        android:id="@+id/imageButton"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="40dp"-->
+<!--        android:layout_marginStart="77dp"-->
+<!--        android:layout_marginTop="12dp"-->
+<!--        android:layout_marginEnd="161dp"-->
+<!--        android:backgroundTint="#FFFFFF"-->
+<!--        android:scaleType="fitCenter"-->
+<!--        android:textAlignment="textStart"-->
+<!--        android:textDirection="ltr"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.0"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/linearLayout"-->
+<!--        app:srcCompat="@drawable/google" />-->
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
