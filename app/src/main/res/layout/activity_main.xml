@@ -28,4 +28,10 @@
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/goto_signin" />
+
+    <WebView
+        android:layout_width="409dp"
+        android:layout_height="563dp"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="167dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
