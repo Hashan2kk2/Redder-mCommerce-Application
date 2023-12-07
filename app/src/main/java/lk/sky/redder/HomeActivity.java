@@ -2,8 +2,6 @@ package lk.sky.redder;
 
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.ImageButton;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,14 +11,15 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class MainActivity extends AppCompatActivity {
+
+public class HomeActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_home);
 
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_nav_menu);
         bottomNavigationView.setItemIconTintList(null);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -35,34 +34,13 @@ public class MainActivity extends AppCompatActivity {
                 } else if (item.getItemId() == R.id.orders_nav) {
                     loadFragment(new OrderFragment());
                     return true;
-                }else if (item.getItemId() == R.id.profile_nav) {
-                    loadFragment(new UserProfileFragment());
-                    return true;
                 }
                 return false;
             }
         });
 
-        ImageButton cart = findViewById(R.id.cart_home);
-        cart.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                loadFragment(new CartFragment());
-            }
-
-        });
-
-        ImageButton wishList = findViewById(R.id.wishList_home);
-        wishList.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                loadFragment(new WishlistFragment());
-            }
-        });
         // initial fragment
         loadFragment(new HomeFragment());
-
-
     }
 
     private void loadFragment(Fragment fragment) {
@@ -71,4 +49,5 @@ public class MainActivity extends AppCompatActivity {
         fragmentTransaction.replace(R.id.container, fragment);
         fragmentTransaction.commit();
     }
+
 }
