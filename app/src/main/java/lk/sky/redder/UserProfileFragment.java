@@ -1,5 +1,6 @@
 package lk.sky.redder;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -30,7 +31,8 @@ public class UserProfileFragment extends Fragment {
         fragment.findViewById(R.id.user_profile_update).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(fragment.getContext(), "Hello", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getActivity(), SignupActivity.class);
+                startActivity(intent);
             }
         });
 
