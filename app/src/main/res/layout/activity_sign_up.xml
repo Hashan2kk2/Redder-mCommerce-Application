@@ -95,7 +95,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:background="@drawable/custom_btn"
-        android:text="@string/sign_in"
+        android:text="Sign Up"
         app:layout_constraintLeft_toLeftOf="@id/password"
         app:layout_constraintRight_toRightOf="@id/password"
         app:layout_constraintTop_toBottomOf="@id/password" />
@@ -125,7 +125,7 @@
     </androidx.appcompat.widget.LinearLayoutCompat>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout"
+        android:id="@+id/signUpWithGoogleBtn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"

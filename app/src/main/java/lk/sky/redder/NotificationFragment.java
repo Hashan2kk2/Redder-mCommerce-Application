@@ -2,57 +2,39 @@ package lk.sky.redder;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link NotificationFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import java.util.ArrayList;
+
+import lk.sky.redder.Adapter.HomeProductAdapter;
+import lk.sky.redder.Adapter.NotificationAdapter;
+import lk.sky.redder.model.NotificationItems;
+import lk.sky.redder.model.ProductItem;
+
 public class NotificationFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    private RecyclerView recyclerRecyclerView;
+    private RecyclerView.Adapter recyclerAdapter;
+//    private ArrayList<Tags> tagsArrayList;
+    private RecyclerView.LayoutManager horizontalLayoutManager;
+    GridLayoutManager gridLayoutManager;
+    private String[] tagsName;
 
     public NotificationFragment() {
         // Required empty public constructor
     }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment NotificationFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static NotificationFragment newInstance(String param1, String param2) {
-        NotificationFragment fragment = new NotificationFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
 
     @Override
@@ -60,5 +42,30 @@ public class NotificationFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_notification, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View fragment, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(fragment, savedInstanceState);
+
+        // Notification Start //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        ArrayList<NotificationItems> notificationItemsList = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            notificationItemsList.add(new NotificationItems(
+                    "Become a personal customer",
+                    "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+                    "10 Min Ago",
+                    R.drawable.notification));
+        }
+
+        RecyclerView recyclerRecyclerView = fragment.findViewById(R.id.notificationRecyclerView);
+        recyclerRecyclerView.setHasFixedSize(true);
+        horizontalLayoutManager = new LinearLayoutManager(getContext());
+        recyclerAdapter = new NotificationAdapter(notificationItemsList);
+        recyclerRecyclerView.setLayoutManager(horizontalLayoutManager);
+        recyclerRecyclerView.setAdapter(recyclerAdapter);
+
+        // Notification End ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     }
 }

@@ -12,10 +12,10 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Redder"
+        android:theme="@style/Base.Theme.Redder"
         tools:targetApi="31">
         <activity
-            android:name=".HomeActivity"
+            android:name=".MainActivity"
             android:exported="false" />
         <activity
             android:name=".SignupActivity"
@@ -32,9 +32,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".MainActivity"
-            android:exported="true"></activity>
     </application>
 
 </manifest>

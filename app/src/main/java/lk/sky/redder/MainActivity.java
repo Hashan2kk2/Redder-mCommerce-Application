@@ -1,47 +1,60 @@
 package lk.sky.redder;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
+import com.google.android.material.navigation.NavigationView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, NavigationBarView.OnItemSelectedListener {
+
+
+    private BottomNavigationView bottomNavigationView;
+    private DrawerLayout drawerLayout;
+    private NavigationView navigation;
+    private MaterialToolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
-        bottomNavigationView.setItemIconTintList(null);
+        drawerLayout = findViewById(R.id.mainDrawerLayout);
+        navigation = findViewById(R.id.mainSideNavigation);
+        toolbar = findViewById(R.id.materialToolBar);
 
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+//        setSupportActionBar(toolbar);
+
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(MainActivity.this, drawerLayout, R.string.open_navigation_drawer, R.string.close_navigation_drawer);
+        drawerLayout.addDrawerListener(toggle);
+        toggle.syncState();
+
+        findViewById(R.id.imageMenuButton).setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                if (item.getItemId() == R.id.home_nav) {
-                    loadFragment(new HomeFragment());
-                    return true;
-                } else if (item.getItemId() == R.id.notification_nav) {
-                    loadFragment(new NotificationFragment());
-                    return true;
-                } else if (item.getItemId() == R.id.orders_nav) {
-                    loadFragment(new OrderFragment());
-                    return true;
-                }else if (item.getItemId() == R.id.profile_nav) {
-                    loadFragment(new UserProfileFragment());
-                    return true;
-                }
-                return false;
+            public void onClick(View v) {
+                drawerLayout.open();
             }
         });
+
+        bottomNavigationView = findViewById(R.id.bottom_navigation);
+        bottomNavigationView.setItemIconTintList(null);
+
+        navigation.setNavigationItemSelectedListener(this);
+        bottomNavigationView.setOnItemSelectedListener(this);
+
 
         ImageButton cart = findViewById(R.id.cart_home);
         cart.setOnClickListener(new View.OnClickListener() {
@@ -63,6 +76,42 @@ public class MainActivity extends AppCompatActivity {
         loadFragment(new HomeFragment());
 
 
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        DrawerLayout dl = findViewById(R.id.mainDrawerLayout);
+        if (item.getItemId() == R.id.home_nav||item.getItemId() == R.id.sideNavHome) {
+            loadFragment(new HomeFragment());
+            dl.close();
+            return true;
+        } else if (item.getItemId() == R.id.notification_nav) {
+            loadFragment(new NotificationFragment());
+            return true;
+        } else if (item.getItemId() == R.id.orders_nav) {
+            loadFragment(new OrderFragment());
+            return true;
+        } else if (item.getItemId() == R.id.profile_nav) {
+            loadFragment(new UserProfileFragment());
+            return true;
+        }else if (item.getItemId() == R.id.sideNavLog) {
+            Intent intent = new Intent(MainActivity.this, SignInActivity.class);
+            startActivity(intent);
+        } else if (item.getItemId() == R.id.sideNavSellerProds) {
+            loadFragment(new MyProductsFragment());
+            dl.close();
+            return true;
+        } else if (item.getItemId()==R.id.sideNavCart) {
+            loadFragment(new CartFragment());
+            dl.close();
+            return true;
+        }else if (item.getItemId()==R.id.sideNavWishlist) {
+            loadFragment(new WishlistFragment());
+            dl.close();
+            return true;
+        }
+        dl.close();
+        return true;
     }
 
     private void loadFragment(Fragment fragment) {

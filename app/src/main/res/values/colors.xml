@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="primary_orange">#D25E46</color>
@@ -20,6 +20,7 @@
     <color name="reder_orange_50">#f77f00</color>
     <color name="reder_yellow">#fcbf49</color>
     <color name="reder_light_bg">#eae2b7</color>
+
 
 <!--    Custom colors -->
 </resources>

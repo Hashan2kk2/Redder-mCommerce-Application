@@ -17,38 +17,68 @@
             android:icon="@drawable/heart"
             android:title="wishlist" />
 
-<!--        <item-->
-<!--            android:id="@+id/sideNavProducts"-->
-<!--            android:icon="@drawable/products_icon"-->
-<!--            android:title="@string/products_text" />-->
+        <item
+            android:id="@+id/sideNavProducts"
+            android:icon="@drawable/products"
+            android:title="Products" />
 
-<!--        <item-->
-<!--            android:id="@+id/sideNavOrders"-->
-<!--            android:icon="@drawable/box_icon"-->
-<!--            android:title="@string/orders_text" />-->
+        <item
+            android:id="@+id/sideNavOrders"
+            android:icon="@drawable/orders"
+            android:title="Orders" />
 
-<!--        <item-->
-<!--            android:id="@+id/sideNavProfile"-->
-<!--            android:icon="@drawable/user_icon"-->
-<!--            android:title="@string/profile_text" />-->
+        <item
+            android:id="@+id/sideNavProfile"
+            android:icon="@drawable/profile"
+            android:title="Profile" />
 
-<!--        <item-->
-<!--            android:id="@+id/sideNavNotification"-->
-<!--            android:icon="@drawable/notification_icon"-->
-<!--            android:title="@string/notification_text" />-->
+        <item
+            android:id="@+id/sideNavNotification"
+            android:icon="@drawable/notification"
+            android:title="Notifications" />
 
     </group>
 
-<!--    <group android:id="@+id/sideNavGroupAuth">-->
-<!--        <item-->
-<!--            android:id="@+id/sideNavLog"-->
-<!--            android:icon="@drawable/sign_in_icon"-->
-<!--            android:title="@string/sign_in_text" />-->
 
-<!--        <item-->
-<!--            android:id="@+id/sideNavLogOut"-->
-<!--            android:icon="@drawable/power_icon"-->
-<!--            android:title="@string/sign_out_text" />-->
-<!--    </group>-->
+    <group android:id="@+id/sideNavGroupAbout">
+        <item
+            android:id="@+id/sideNavAbout"
+            android:icon="@drawable/info"
+            android:title="About Us" />
+
+        <item
+            android:id="@+id/sideNavHelp"
+            android:icon="@drawable/help"
+            android:title="Help" />
+
+        <item
+            android:id="@+id/sideNavPrivacyPolicy"
+            android:icon="@drawable/privacy"
+            android:title="Privacy Policy" />
+    </group>
+
+    <group android:id="@+id/sideNavSeller">
+        <item
+            android:id="@+id/sideNavProdReg"
+            android:icon="@drawable/addprod"
+            android:title="Product Registration" />
+
+        <item
+            android:id="@+id/sideNavSellerProds"
+            android:icon="@drawable/my_products"
+            android:title="My Products" />
+    </group>
+
+    <group android:id="@+id/sideNavGroupAuth">
+        <item
+            android:id="@+id/sideNavLog"
+            android:icon="@drawable/profile"
+            android:title="Sign In" />
+
+        <item
+            android:id="@+id/sideNavLogOut"
+            android:icon="@drawable/signout"
+            android:title="Sign Out" />
+    </group>
 
 </menu>

@@ -25,6 +25,7 @@ import lk.sky.redder.model.ProductItem;
 public class HomeFragment extends Fragment {
 
     private RecyclerView recyclerView;
+    private RecyclerView recyclerView2;
     private RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager layoutManager;
     private GridLayoutManager gridLayoutManager;
@@ -53,7 +54,7 @@ public class HomeFragment extends Fragment {
 
     @Override
     public void onViewCreated(@NonNull View fragment, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(fragment, savedInstanceState);
+            super.onViewCreated(fragment, savedInstanceState);
 
         ArrayList<ProductItem> productsList = new ArrayList<>();
 
@@ -76,6 +77,17 @@ public class HomeFragment extends Fragment {
 
         recyclerView.setLayoutManager(gridLayoutManager);
         recyclerView.setAdapter(adapter);
+
+//        ==================== recycler view 2 =========================
+        recyclerView2 = fragment.findViewById(R.id.homeRecyclerView2);
+        recyclerView2.setHasFixedSize(true);
+//        layoutManager = new LinearLayoutManager(getContext());
+
+        gridLayoutManager = new GridLayoutManager(getContext(),2);
+        adapter = new HomeProductAdapter(productsList);
+
+        recyclerView2.setLayoutManager(gridLayoutManager);
+        recyclerView2.setAdapter(adapter);
 
     }
 }

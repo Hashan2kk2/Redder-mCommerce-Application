@@ -18,7 +18,7 @@
         app:srcCompat="@drawable/logo_dark" />
 
     <EditText
-        android:id="@+id/emailEditText"
+        android:id="@+id/signInEmail"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -44,14 +44,14 @@
         android:layout_marginTop="10dp"
         android:layout_marginBottom="20dp"
         android:text="Please Enter Valid Email Address"
-        app:layout_constraintBottom_toTopOf="@id/textPassword"
-        app:layout_constraintEnd_toEndOf="@+id/emailEditText"
-        app:layout_constraintLeft_toLeftOf="@id/emailEditText"
-        app:layout_constraintStart_toStartOf="@+id/emailEditText"
-        app:layout_constraintTop_toBottomOf="@id/emailEditText" />
+        app:layout_constraintBottom_toTopOf="@id/signInPassword"
+        app:layout_constraintEnd_toEndOf="@+id/signInEmail"
+        app:layout_constraintLeft_toLeftOf="@id/signInEmail"
+        app:layout_constraintStart_toStartOf="@+id/signInEmail"
+        app:layout_constraintTop_toBottomOf="@id/signInEmail" />
 
     <EditText
-        android:id="@+id/textPassword"
+        android:id="@+id/signInPassword"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -74,14 +74,14 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:text="Password Should contains atleast 8 characters"
-    app:layout_constraintTop_toBottomOf="@id/textPassword"
-    app:layout_constraintLeft_toLeftOf="@id/textPassword"
-    app:layout_constraintRight_toRightOf="@id/textPassword"
+    app:layout_constraintTop_toBottomOf="@id/signInPassword"
+    app:layout_constraintLeft_toLeftOf="@id/signInPassword"
+    app:layout_constraintRight_toRightOf="@id/signInPassword"
     android:layout_marginTop="10dp"
-    app:layout_constraintBottom_toTopOf="@id/button"
+    app:layout_constraintBottom_toTopOf="@id/signInbutton"
     />
     <Button
-        android:id="@+id/button"
+        android:id="@+id/signInbutton"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -106,7 +106,7 @@
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button">
+        app:layout_constraintTop_toBottomOf="@+id/signInbutton">
 
         <TextView
             android:id="@+id/textView"
@@ -122,48 +122,6 @@
             android:text="@string/signupLink"
             android:textColor="@color/orange" />
     </LinearLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="38dp"
-        android:background="@drawable/custom_input_rounded"
-        app:layout_constraintEnd_toEndOf="@+id/button"
-        app:layout_constraintStart_toStartOf="@+id/button"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:layout_marginTop="38dp"
-            android:gravity="center_horizontal|center_vertical"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:ignore="MissingConstraints">
-
-            <ImageView
-                android:id="@+id/imageView3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textAlignment="center"
-                app:srcCompat="@drawable/google_icon" />
-
-            <Space
-                android:layout_width="10dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
-
-            <TextView
-                android:id="@+id/signInWithGoogle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Sign Up with Google" />
-        </LinearLayout>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
