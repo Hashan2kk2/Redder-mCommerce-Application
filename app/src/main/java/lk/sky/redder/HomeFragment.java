@@ -21,6 +21,11 @@ import lk.sky.redder.Adapter.CartProductAdapter;
 import lk.sky.redder.Adapter.HomeProductAdapter;
 import lk.sky.redder.model.ProductItem;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 
 public class HomeFragment extends Fragment {
 
@@ -29,6 +34,8 @@ public class HomeFragment extends Fragment {
     private RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager layoutManager;
     private GridLayoutManager gridLayoutManager;
+
+    private FirebaseDatabase firebaseDatabase;
 
     public HomeFragment() {
         // Required empty public constructor
