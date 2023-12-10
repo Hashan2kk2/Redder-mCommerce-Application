@@ -113,6 +113,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             loadFragment(new PrivacyPolicyFragment());
             dl.close();
             return true;
+        }else if (item.getItemId()==R.id.sideNavProdReg) {
+            loadFragment(new AddProductFragment());
+            dl.close();
+            return true;
         }
         dl.close();
         return true;
