@@ -97,7 +97,7 @@ public class HomeFragment extends Fragment {
 //        layoutManager = new LinearLayoutManager(getContext());
 
         gridLayoutManager = new GridLayoutManager(getContext(), 2);
-        newArrivalAdapter = new HomeProductAdapter(newArrivalsProducts);
+        newArrivalAdapter = new HomeProductAdapter(newArrivalsProducts,HomeFragment.this);
 
         recyclerView.setLayoutManager(gridLayoutManager);
         recyclerView.setAdapter(newArrivalAdapter);

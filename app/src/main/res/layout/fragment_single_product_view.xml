@@ -72,7 +72,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView62"
+            android:id="@+id/priceFieldS"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -88,7 +88,7 @@
             android:layout_marginEnd="24dp"
             android:backgroundTint="@color/reder_orange"
             android:text="Buy Now"
-            app:layout_constraintBottom_toBottomOf="@+id/textView62"
+            app:layout_constraintBottom_toBottomOf="@+id/priceFieldS"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/textView61" />
 
@@ -97,7 +97,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout3"
         android:layout_width="0dp"
-        android:layout_height="250dp"
+        android:layout_height="200dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="16dp"
@@ -137,7 +137,7 @@
             android:paddingBottom="10dp">
 
             <TextView
-                android:id="@+id/textView57"
+                android:id="@+id/catTextField"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Gaming Mouse"
@@ -146,7 +146,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/textView58"
+                android:id="@+id/productNameFieldS"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
@@ -156,8 +156,8 @@
                 android:textSize="19sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/textView57"
-                app:layout_constraintTop_toBottomOf="@+id/textView57" />
+                app:layout_constraintStart_toStartOf="@+id/catTextField"
+                app:layout_constraintTop_toBottomOf="@+id/catTextField" />
 
             <TextView
                 android:id="@+id/textView59"
@@ -169,19 +169,19 @@
                 android:gravity="center_vertical"
                 android:text="4.5"
                 android:textColor="@color/matte_light_dark"
-                app:layout_constraintBottom_toBottomOf="@+id/textView57"
-                app:layout_constraintEnd_toEndOf="@+id/textView58"
-                app:layout_constraintTop_toTopOf="@+id/textView57" />
+                app:layout_constraintBottom_toBottomOf="@+id/catTextField"
+                app:layout_constraintEnd_toEndOf="@+id/productNameFieldS"
+                app:layout_constraintTop_toTopOf="@+id/catTextField" />
 
             <TextView
-                android:id="@+id/textView60"
+                android:id="@+id/descrptionFieldS"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
-                app:layout_constraintEnd_toEndOf="@+id/textView58"
+                app:layout_constraintEnd_toEndOf="@+id/productNameFieldS"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/textView58"
+                app:layout_constraintStart_toStartOf="@+id/productNameFieldS"
                 app:layout_constraintTop_toBottomOf="@+id/textView67" />
 
             <TextView
@@ -192,7 +192,7 @@
                 android:text="Model : "
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView58" />
+                app:layout_constraintTop_toBottomOf="@+id/productNameFieldS" />
 
             <TextView
                 android:id="@+id/textView64"
@@ -215,7 +215,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView63" />
 
             <TextView
-                android:id="@+id/textView66"
+                android:id="@+id/brandField"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
@@ -242,7 +242,7 @@
                 android:background="?android:attr/listDivider"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView60" />
+                app:layout_constraintTop_toBottomOf="@+id/descrptionFieldS" />
 
             <TextView
                 android:id="@+id/textView68"
@@ -294,7 +294,7 @@
                 android:backgroundTint="@color/dark_white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/divider5">
+                app:layout_constraintTop_toBottomOf="@+id/qtyTextS">
 
                 <TextView
                     android:id="@+id/textView71"
@@ -370,6 +370,64 @@
                 </LinearLayout>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/qtyTextS"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/custom_input_rounded"
+                android:backgroundTint="@color/orange"
+                android:padding="5dp"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:text="TextView"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider5" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="@+id/qtyTextS"
+                app:layout_constraintStart_toEndOf="@+id/qtyTextS"
+                app:layout_constraintTop_toTopOf="@+id/qtyTextS">
+
+                <ImageButton
+                    android:id="@+id/imageButton6"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/dark_white"
+                    android:background="@drawable/custom_input_rounded"
+                    app:srcCompat="@drawable/minus" />
+
+                <TextView
+                    android:id="@+id/textView24"
+                    android:layout_width="35dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="01"
+                    android:textAlignment="center" />
+
+                <ImageButton
+                    android:id="@+id/imageButton5"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/custom_input_rounded"
+                    android:backgroundTint="@color/dark_white"
+                    app:srcCompat="@drawable/plus" />
+
+                <Space
+                    android:layout_width="5dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+            </LinearLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

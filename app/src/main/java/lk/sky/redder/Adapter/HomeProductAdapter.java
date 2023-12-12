@@ -10,6 +10,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.squareup.picasso.Picasso;
@@ -17,13 +20,17 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 
 import lk.sky.redder.R;
+import lk.sky.redder.SingleProductViewFragment;
 import lk.sky.redder.model.Product;
 
 public class HomeProductAdapter extends RecyclerView.Adapter<HomeProductAdapter.ViewHolder> {
     private ArrayList<Product> productItemsList;
+    private Fragment transactionFragment;
 
-    public HomeProductAdapter(ArrayList<Product> productsList) {
+
+    public HomeProductAdapter(ArrayList<Product> productsList, Fragment fragment) {
         this.productItemsList = productsList;
+        this.transactionFragment = fragment;
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
@@ -61,10 +68,23 @@ public class HomeProductAdapter extends RecyclerView.Adapter<HomeProductAdapter.
         holder.brand.setText(currentItem.getBrand());
         holder.category.setText(currentItem.getCategory());
         holder.price.setText(currentItem.getPrice().toString());
+
+        holder.imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loadFragment(new SingleProductViewFragment(currentItem));
+            }
+        });
     }
 
     @Override
     public int getItemCount() {
         return productItemsList.size();
+    }
+    public void loadFragment(Fragment fragment) {
+        FragmentManager supportFragmentManager = transactionFragment.getActivity().getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = supportFragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.container, fragment);
+        fragmentTransaction.commit();
     }
 }

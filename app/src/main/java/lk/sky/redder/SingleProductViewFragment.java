@@ -1,6 +1,10 @@
 package lk.sky.redder;
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -8,19 +12,23 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-
 import java.util.ArrayList;
 
 import lk.sky.redder.Adapter.SingleProductViewImageAdapter;
+import lk.sky.redder.model.Product;
 
 public class SingleProductViewFragment extends Fragment {
 
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager layoutManager;
+
+    private Product product;
+
+    public SingleProductViewFragment(Product product) {
+        this.product = product;
+    }
+
     public SingleProductViewFragment() {
         // Required empty public constructor
     }
@@ -43,18 +51,29 @@ public class SingleProductViewFragment extends Fragment {
         super.onViewCreated(fragment, savedInstanceState);
         ArrayList<String> imageList = new ArrayList<>();
 
+        TextView categoryField = fragment.findViewById(R.id.catTextField);
+        TextView brandField = fragment.findViewById(R.id.brandField);
+        TextView nameField = fragment.findViewById(R.id.productNameFieldS);
+        TextView priceField = fragment.findViewById(R.id.priceFieldS);
+        TextView descriptionField = fragment.findViewById(R.id.descrptionFieldS);
+        TextView qtyField = fragment.findViewById(R.id.qtyTextS);
 
-//        for (int i = 0; i < 10; i++) {
-        imageList.add("https://i.ebayimg.com/images/g/6l4AAOSwiadlBoUS/s-l1600.jpg");
-        imageList.add("https://i.ebayimg.com/images/g/1TcAAOSwBB5hFT~A/s-l1600.jpg");
-        imageList.add("https://i.ebayimg.com/images/g/9j8AAOSwtkRlWTSH/s-l960.png");
-//        }
 
+        for (int i = 0; i < product.getImageList().size(); i++) {
+            imageList.add(product.getImageList().get(i));
+        }
         recyclerView = fragment.findViewById(R.id.singleProductViewImageRecycler);
         recyclerView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
         adapter = new SingleProductViewImageAdapter(imageList);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
+
+        categoryField.setText(product.getCategory());
+        brandField.setText(product.getBrand());
+        nameField.setText(product.getName());
+        priceField.setText("Rs." + product.getPrice().toString() + "0");
+        descriptionField.setText(product.getDescription());
+        qtyField.setText("Quantity : " + product.getQuantity());
     }
 }

@@ -4,15 +4,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-
-import androidx.activity.result.ActivityResult;
-import androidx.activity.result.ActivityResultCallback;
-import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContracts;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,14 +15,13 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-
-import com.bumptech.glide.Glide;
-import com.google.firebase.storage.OnProgressListener;
-
-//import com.google.firebase.storage.FirebaseStorage;
-//import com.google.firebase.firestore.FirebaseFirestore;
-//import com.google.firebase.storage.StorageReference;
-//import com.google.firebase.FirebaseApp;
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 
 import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -47,8 +37,6 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
-import com.google.gson.Gson;
-import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.UUID;
@@ -77,7 +65,7 @@ public class AddProductFragment extends Fragment {
         // Required empty public constructor
     }
 
-     @Override
+    @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
@@ -308,6 +296,7 @@ public class AddProductFragment extends Fragment {
             }
         });
     }
+
     ActivityResultLauncher<Intent> activityResultLauncher1 = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),
             new ActivityResultCallback<ActivityResult>() {
@@ -356,6 +345,7 @@ public class AddProductFragment extends Fragment {
                 }
             }
     );
+
     private void addProduct() {
         String title = productTitleText.getText().toString();
         String price = productPriceText.getText().toString();
@@ -417,6 +407,7 @@ public class AddProductFragment extends Fragment {
 
 //        }
     }
+
     private void addDetailsToDatabase(int index, String title, String price, String qty, String description) {
         System.out.println("addDetailsToDatabase : start");
         System.out.println("index : " + index + " images size : " + images.size());
