@@ -135,6 +135,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 //                Toast.makeText(this, "null", Toast.LENGTH_SHORT).show();
 
             }
+        }else if (item.getItemId() == R.id.sideNavAbout){
+            loadFragment(new AboutUsFragment());
+            dl.close();
         }
         dl.close();
         return true;
