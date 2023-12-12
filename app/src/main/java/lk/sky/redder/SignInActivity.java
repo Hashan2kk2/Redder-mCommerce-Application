@@ -27,18 +27,20 @@ public class SignInActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
 setContentView(R.layout.activity_sign_in);
+        firebaseAuth = FirebaseAuth.getInstance();
 
 
-        findViewById(R.id.signinSignUpbtn).setOnClickListener(new View.OnClickListener() {
+
+        findViewById(R.id.signUpbtnSignin).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(SignInActivity.this,SignupActivity.class);
+                Intent intent = new Intent(SignInActivity.this,SignUpActivity.class);
                 startActivity(intent);
             }
         });
 
-        firebaseAuth = FirebaseAuth.getInstance();
 
         EditText email = findViewById(R.id.signInEmail);
         EditText password = findViewById(R.id.signInPassword);

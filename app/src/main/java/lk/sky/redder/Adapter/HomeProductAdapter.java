@@ -12,29 +12,33 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import lk.sky.redder.R;
-import lk.sky.redder.model.ProductItem;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-public class HomeProductAdapter extends RecyclerView.Adapter<HomeProductAdapter.ViewHolder>{
-    private ArrayList<ProductItem> productItemsList;
+import lk.sky.redder.R;
+import lk.sky.redder.model.Product;
 
-    public HomeProductAdapter(ArrayList<ProductItem> productsList) {
+public class HomeProductAdapter extends RecyclerView.Adapter<HomeProductAdapter.ViewHolder> {
+    private ArrayList<Product> productItemsList;
+
+    public HomeProductAdapter(ArrayList<Product> productsList) {
         this.productItemsList = productsList;
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         public ImageView imageView;
-//        public TextView name, brand, category, price;
+        public TextView name, brand, category, price;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             imageView = itemView.findViewById(R.id.productImg);
-//            name = itemView.findViewById(R.id.productNameText);
-//            brand = itemView.findViewById(R.id.brandText);
-//            category = itemView.findViewById(R.id.categoryText);
-//            price = itemView.findViewById(R.id.priceText);
+            name = itemView.findViewById(R.id.prod_name);
+            brand = itemView.findViewById(R.id.prod_brand);
+            category = itemView.findViewById(R.id.prod_category);
+            price = itemView.findViewById(R.id.prod_price);
+
+
         }
     }
 
@@ -51,12 +55,12 @@ public class HomeProductAdapter extends RecyclerView.Adapter<HomeProductAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        ProductItem currentItem = productItemsList.get(position);
-        holder.imageView.setImageResource(currentItem.getImageSource());
-//        holder.name.setText(currentItem.getName());
-//        holder.brand.setText(currentItem.getBrand());
-//        holder.category.setText(currentItem.getCategory());
-//        holder.price.setText(currentItem.getPrice().toString());
+        Product currentItem = productItemsList.get(position);
+        Picasso.get().load(currentItem.getImageList().get(0)).into(holder.imageView);
+        holder.name.setText(currentItem.getName());
+        holder.brand.setText(currentItem.getBrand());
+        holder.category.setText(currentItem.getCategory());
+        holder.price.setText(currentItem.getPrice().toString());
     }
 
     @Override

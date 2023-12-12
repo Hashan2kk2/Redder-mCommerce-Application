@@ -78,13 +78,20 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
+                    android:id="@+id/profileImageView"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginStart="50dp"
                     android:src="@drawable/user"
                     android:scaleType="centerCrop"
                     android:background="@drawable/custom_input_rounded"/>
-
+                <ImageButton
+                    android:id="@+id/addProfileImageBtn"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/addprod"
+                    android:background="@drawable/custom_input_rounded"
+                    android:backgroundTint="@color/white"/>
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -93,9 +100,10 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/user_profile_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginVertical="10dp"
+                        android:layout_marginVertical="2dp"
                         android:fontFamily="@font/gotham_medium"
                         android:text="User Name"
                         android:textSize="20dp" />
@@ -103,16 +111,26 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="10dp"
+                        android:layout_marginBottom="5dp"
                         android:text="user@gmail.com"
                         android:textSize="15dp" />
 
-                    <TextView
+                    <Button
+                        android:id="@+id/signOutBtn"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@drawable/custom_btn"
                         android:paddingHorizontal="40dp"
-                        android:text="active"
+                        android:text="Sign Out"
+                        android:textColor="@color/white" />
+
+                    <Button
+                        android:id="@+id/signInBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/custom_btn"
+                        android:paddingHorizontal="40dp"
+                        android:text="Sign In"
                         android:textColor="@color/white" />
                 </LinearLayout>
             </LinearLayout>
@@ -130,18 +148,43 @@
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/user_profile_linear" />
 
-            <EditText
-                android:id="@+id/user_profile_name"
+            <LinearLayout
+                android:id="@+id/user_profile_name_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/custom_input_rounded"
-                android:editable="false"
-                android:paddingHorizontal="15dp"
-                android:paddingVertical="8dp"
-                android:text="Hashan Lakruwan"
-                app:layout_constraintTop_toBottomOf="@+id/user_profile_label" />
+                app:layout_constraintEnd_toEndOf="@+id/user_profile_email"
+                app:layout_constraintStart_toStartOf="@+id/user_profile_email"
+                app:layout_constraintTop_toBottomOf="@+id/user_profile_label">
+
+                <EditText
+                    android:id="@+id/firstNameField"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="5dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/custom_input_rounded"
+                    android:editable="false"
+                    android:paddingHorizontal="15dp"
+                    android:paddingVertical="8dp"
+                    android:hint="First Name"/>
+
+                <EditText
+                    android:id="@+id/lastNameField"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="5dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/custom_input_rounded"
+                    android:editable="false"
+                    android:paddingHorizontal="15dp"
+                    android:paddingVertical="8dp"
+                    android:hint="Last Name"/>
+
+            </LinearLayout>
+
+
 
             <EditText
                 android:id="@+id/user_profile_email"
@@ -154,7 +197,7 @@
                 android:paddingHorizontal="15dp"
                 android:paddingVertical="8dp"
                 android:text="hashan@gmail.com"
-                app:layout_constraintTop_toBottomOf="@+id/user_profile_name" />
+                app:layout_constraintTop_toBottomOf="@+id/user_profile_name_layout" />
 
             <EditText
                 android:id="@+id/user_profile_password"

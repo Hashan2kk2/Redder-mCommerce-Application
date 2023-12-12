@@ -34,7 +34,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import lk.sky.redder.model.User;
 
-public class SignupActivity extends AppCompatActivity {
+public class SignUpActivity extends AppCompatActivity {
 
     private FirebaseAuth firebaseAuth;
     private FirebaseFirestore fireStoreDatabase;
@@ -59,7 +59,7 @@ public class SignupActivity extends AppCompatActivity {
         findViewById(R.id.signIn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(SignupActivity.this, SignInActivity.class));
+                startActivity(new Intent(SignUpActivity.this, SignInActivity.class));
             }
         });
 
@@ -117,22 +117,22 @@ public class SignupActivity extends AppCompatActivity {
 //                    user.setEmail(email);
 //                    user.setPassword(password);
                     currentUser.sendEmailVerification();
-                    Toast.makeText(SignupActivity.this, "Email Sent Successfully.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(SignUpActivity.this, "Email Sent Successfully.", Toast.LENGTH_SHORT).show();
 
                     fireStoreDatabase.collection("users").add(user).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                         @Override
                         public void onSuccess(DocumentReference documentReference) {
-                            startActivity(new Intent(SignupActivity.this, SignInActivity.class));
+                            startActivity(new Intent(SignUpActivity.this, SignInActivity.class));
 
                         }
                     }).addOnFailureListener(new OnFailureListener() {
                         @Override
                         public void onFailure(@NonNull Exception e) {
-                            Toast.makeText(SignupActivity.this, "Error! Please Try Again.", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(SignUpActivity.this, "Error! Please Try Again.", Toast.LENGTH_SHORT).show();
                         }
                     });
                 } else {
-                    Toast.makeText(SignupActivity.this, "Already Registered on this Account", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(SignUpActivity.this, "Already Registered on this Account", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -151,7 +151,7 @@ public class SignupActivity extends AppCompatActivity {
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-                Toast.makeText(SignupActivity.this, "Something went wrong. Please try again.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(SignUpActivity.this, "Something went wrong. Please try again.", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -184,14 +184,14 @@ public class SignupActivity extends AppCompatActivity {
                 if (task.isSuccessful()) {
                     FirebaseUser user = firebaseAuth.getCurrentUser();
                     if (user != null) {
-                        startActivity(new Intent(SignupActivity.this, MainActivity.class));
+                        startActivity(new Intent(SignUpActivity.this, MainActivity.class));
                     }
                 }
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-                Toast.makeText(SignupActivity.this, "Error. Please try again.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(SignUpActivity.this, "Error. Please try again.", Toast.LENGTH_SHORT).show();
             }
         });
     }

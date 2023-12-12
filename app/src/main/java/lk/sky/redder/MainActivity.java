@@ -63,6 +63,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         bottomNavigationView.setOnItemSelectedListener(this);
 
 
+
+
         ImageButton cart = findViewById(R.id.cart_home);
         cart.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -98,10 +100,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else if (item.getItemId() == R.id.orders_nav) {
             loadFragment(new OrderFragment());
             return true;
-        } else if (item.getItemId() == R.id.profile_nav) {
-            loadFragment(new UserProfileFragment());
-            return true;
-        }else if (item.getItemId() == R.id.sideNavLog) {
+        } else if (item.getItemId() == R.id.sideNavLog) {
             Intent intent = new Intent(MainActivity.this, SignInActivity.class);
             startActivity(intent);
         } else if (item.getItemId() == R.id.sideNavSellerProds) {
@@ -127,6 +126,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else if (item.getItemId()==R.id.sideNavLogOut) {
             firebaseAuth.signOut();
             Toast.makeText(MainActivity.this, "Successfully Signed Out", Toast.LENGTH_SHORT).show();
+        }else if (item.getItemId() == R.id.sideNavProfile || item.getItemId() == R.id.profile_nav_bottom) {
+            if (currentUser != null) {
+                loadFragment(new UserProfileFragment());
+//                Toast.makeText(this, "Not null", Toast.LENGTH_SHORT).show();
+            }else{
+                startActivity(new Intent(MainActivity.this, SignInActivity.class));
+//                Toast.makeText(this, "null", Toast.LENGTH_SHORT).show();
+
+            }
         }
         dl.close();
         return true;

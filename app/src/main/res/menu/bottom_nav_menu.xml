@@ -16,6 +16,6 @@
         android:title="Orders" />
     <item
         android:icon="@drawable/profile"
-        android:id="@+id/profile_nav"
+        android:id="@+id/profile_nav_bottom"
         android:title="Profile" />
 </menu>

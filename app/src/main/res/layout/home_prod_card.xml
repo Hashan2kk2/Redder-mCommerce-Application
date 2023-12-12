@@ -56,7 +56,7 @@
             app:layout_constraintTop_toBottomOf="@+id/productImg" />
 
         <TextView
-            android:id="@+id/prod_type"
+            android:id="@+id/prod_brand"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -71,9 +71,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:text="Laptop"
-            app:layout_constraintLeft_toLeftOf="@+id/prod_type"
-            app:layout_constraintRight_toRightOf="@+id/prod_type"
-            app:layout_constraintTop_toBottomOf="@id/prod_type" />
+            app:layout_constraintLeft_toLeftOf="@+id/prod_brand"
+            app:layout_constraintRight_toRightOf="@+id/prod_brand"
+            app:layout_constraintTop_toBottomOf="@id/prod_brand" />
 
         <TextView
             android:id="@+id/prod_price"

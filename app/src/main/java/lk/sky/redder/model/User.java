@@ -7,6 +7,12 @@ public class User {
     private String email;
     private String password;
 
+    private String mobile;
+    private String address;
+    private String userType;
+    private String city;
+    private String imageUrl;
+
     public User() {
     }
 
@@ -15,6 +21,46 @@ public class User {
         this.lname = lname;
         this.email = email;
         this.password = password;
+    }
+
+    public String getMobile() {
+        return mobile;
+    }
+
+    public void setMobile(String mobile) {
+        this.mobile = mobile;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getUserType() {
+        return userType;
+    }
+
+    public void setUserType(String userType) {
+        this.userType = userType;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 
     public String getFname() {

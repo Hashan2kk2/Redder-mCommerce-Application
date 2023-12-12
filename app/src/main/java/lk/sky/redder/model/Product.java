@@ -5,20 +5,23 @@ import java.util.ArrayList;
 public class Product {
 
     private ArrayList<String> imageList;
-    private String name, description, category, brand, model;
+    private String name, description, category, brand, model, regDate, sellerEmail;
     private Double price;
     private int quantity;
+
 
     public Product() {
     }
 
-    public Product(ArrayList<String> imageList, String name, String description, String category, String brand, String model, Double price, int quantity) {
+    public Product(ArrayList<String> imageList, String name, String description, String category, String brand, String model, String regDate, String sellerEmail, Double price, int quantity) {
         this.imageList = imageList;
         this.name = name;
         this.description = description;
         this.category = category;
         this.brand = brand;
         this.model = model;
+        this.regDate = regDate;
+        this.sellerEmail = sellerEmail;
         this.price = price;
         this.quantity = quantity;
     }
@@ -29,6 +32,22 @@ public class Product {
 
     public void setImageList(ArrayList<String> imageList) {
         this.imageList = imageList;
+    }
+
+    public String getRegDate() {
+        return regDate;
+    }
+
+    public void setRegDate(String regDate) {
+        this.regDate = regDate;
+    }
+
+    public String getSellerEmail() {
+        return sellerEmail;
+    }
+
+    public void setSellerEmail(String sellerEmail) {
+        this.sellerEmail = sellerEmail;
     }
 
     public String getName() {
