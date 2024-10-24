@@ -1,7 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="primary_orange">#D25E46</color>
+    <color name="dark_orange">#A5341D</color>
+    <color name="light_dark">#EBEBEB</color>
+    <color name="dark_white">#F1F1F1</color>
+    <color name="matte_dark">#2B2B2B</color>
+    <color name="matte_light_dark">#7A7A7A</color>
     <color name="orange">#F06B2F</color>
     <color name="black_25">#6c757d</color>
+    <color name="colorInactive">#808080</color> <!-- Inactive icon color -->
+    <color name="colorActive">#FF0000</color>   <!-- Active icon color -->
+
+<!--    Custom colors -->
+    <color name="textColor">#003049</color>
+    <color name="reder_red">#d62828</color>
+    <color name="reder_orange">#F06B2F</color>
+    <color name="reder_orange_50">#f77f00</color>
+    <color name="reder_yellow">#fcbf49</color>
+    <color name="reder_light_bg">#eae2b7</color>
+
+
+<!--    Custom colors -->
 </resources>

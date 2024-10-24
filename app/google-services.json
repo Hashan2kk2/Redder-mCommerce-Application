@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "874829648572",
+    "project_id": "redder-c616b",
+    "storage_bucket": "redder-c616b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:874829648572:android:052e4cc62249433780f6b9",
+        "android_client_info": {
+          "package_name": "lk.sky.redder"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "874829648572-md3nbvugf4e9o8giajtq5da2vfssoogj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "lk.sky.redder",
+            "certificate_hash": "97f03635e30a62447bb8bd57943e6917290a035e"
+          }
+        },
+        {
+          "client_id": "874829648572-blsgq77v3tvsj462ielefah9n9v5ac4b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCp6xHcLBQyHl40HSUaq20n_CaUiWYCOLE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "874829648572-blsgq77v3tvsj462ielefah9n9v5ac4b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

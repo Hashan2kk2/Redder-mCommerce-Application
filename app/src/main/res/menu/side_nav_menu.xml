@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:id="@+id/sideNavGroupMain">
+        <item
+            android:id="@+id/sideNavHome"
+            android:icon="@drawable/home"
+            android:title="Home" />
+
+        <item
+            android:id="@+id/sideNavCart"
+            android:icon="@drawable/cart"
+            android:title="Cart" />
+
+        <item
+            android:id="@+id/sideNavWishlist"
+            android:icon="@drawable/heart"
+            android:title="wishlist" />
+
+        <item
+            android:id="@+id/sideNavProducts"
+            android:icon="@drawable/products"
+            android:title="Products" />
+
+        <item
+            android:id="@+id/sideNavOrders"
+            android:icon="@drawable/orders"
+            android:title="Orders" />
+
+        <item
+            android:id="@+id/sideNavProfile"
+            android:icon="@drawable/profile"
+            android:title="Profile" />
+
+        <item
+            android:id="@+id/sideNavNotification"
+            android:icon="@drawable/notification"
+            android:title="Notifications" />
+
+    </group>
+
+
+    <group android:id="@+id/sideNavGroupAbout">
+        <item
+            android:id="@+id/sideNavAbout"
+            android:icon="@drawable/info"
+            android:title="About Us" />
+
+        <item
+            android:id="@+id/sideNavHelp"
+            android:icon="@drawable/help"
+            android:title="Help" />
+
+        <item
+            android:id="@+id/sideNavPrivacyPolicy"
+            android:icon="@drawable/privacy"
+            android:title="Privacy Policy" />
+    </group>
+
+    <group android:id="@+id/sideNavSeller">
+        <item
+            android:id="@+id/sideNavProdReg"
+            android:icon="@drawable/addprod"
+            android:title="Product Registration" />
+
+        <item
+            android:id="@+id/sideNavSellerProds"
+            android:icon="@drawable/my_products"
+            android:title="My Products" />
+    </group>
+
+    <group android:id="@+id/sideNavGroupAuth">
+        <item
+            android:id="@+id/sideNavLog"
+            android:icon="@drawable/profile"
+            android:title="Sign In" />
+
+        <item
+            android:id="@+id/sideNavLogOut"
+            android:icon="@drawable/signout"
+            android:title="Sign Out" />
+    </group>
+
+</menu>

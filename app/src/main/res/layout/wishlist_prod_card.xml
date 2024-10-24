@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/custom_btn"
+        android:backgroundTint="@color/light_dark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_goneMarginBottom="20dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout4"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/custom_input_rounded"
+            android:backgroundTint="@color/white"
+            android:padding="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/productImgWishlist"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/macbook" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/productNameText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:lines="1"
+            android:text="Mac Book Pro 2022"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:textColor="@color/textColor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/constraintLayout4"
+            app:layout_constraintTop_toTopOf="@+id/constraintLayout4" />
+        <TextView
+            android:id="@+id/brandText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Apple"
+            android:textColor="@color/textColor"
+            app:layout_constraintStart_toStartOf="@+id/productNameText"
+            app:layout_constraintTop_toBottomOf="@+id/productNameText" />
+
+        <TextView
+            android:id="@+id/categoryText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textColor="@color/textColor"
+            android:text="Laptop"
+            app:layout_constraintStart_toStartOf="@+id/brandText"
+            app:layout_constraintTop_toBottomOf="@+id/brandText" />
+
+        <TextView
+            android:id="@+id/priceText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="LKR.300,000"
+            android:textSize="14dp"
+            android:textColor="@color/black_25"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/constraintLayout4"
+            app:layout_constraintStart_toStartOf="@+id/categoryText"
+            app:layout_constraintTop_toBottomOf="@+id/categoryText" />
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="@+id/priceText"
+            app:layout_constraintEnd_toEndOf="@+id/productNameText">
+            <ImageButton
+                android:id="@+id/imageButton6"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_weight="1"
+                android:background="@drawable/custom_btn"
+                android:src="@drawable/minus"
+                android:scaleType="fitCenter"
+                app:tint="@color/textColor" />
+
+            <TextView
+                android:id="@+id/textView24"
+                android:layout_width="35dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="10"
+                android:textColor="@color/textColor"
+                android:textAlignment="center" />
+
+            <ImageButton
+                android:id="@+id/imageButton5"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_weight="1"
+                android:background="@drawable/custom_btn"
+                android:backgroundTint="@color/reder_yellow"
+                android:src="@drawable/plus"
+                android:scaleType="fitCenter"
+                app:tint="@color/textColor" />
+
+
+            <Space
+                android:layout_width="5dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <ImageButton
+                android:id="@+id/imageButton7"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="@drawable/custom_btn"
+                android:backgroundTint="@color/white"
+                app:srcCompat="@drawable/trash"
+                android:scaleType="fitCenter"
+                app:tint="@color/reder_red" />
+
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/imageButton2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="4dp"
+            android:background="@drawable/custom_input_rounded"
+            android:backgroundTint="@color/orange"
+            android:padding="5dp"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+            app:layout_constraintEnd_toEndOf="@+id/linearLayout2"
+            app:layout_constraintStart_toStartOf="@+id/linearLayout2"
+            app:layout_constraintTop_toBottomOf="@+id/productNameText"
+            app:srcCompat="@drawable/cart"
+            app:tint="#FFFFFF" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
