@@ -20,6 +20,17 @@
 - **Tools**: Android Studio, Visual Studio Code
 - **Google Maps API**: For location-based services
 
+##**Screenshots**
+
+![image](https://github.com/user-attachments/assets/8883a35a-f482-4414-a48d-014a8d670320)
+![image](https://github.com/user-attachments/assets/69b1f5ae-a568-4488-be45-b4b22ad711b7)
+![image](https://github.com/user-attachments/assets/f9ff2368-2076-48e9-b279-b484ade8be77)
+![image](https://github.com/user-attachments/assets/3c319f95-f63e-4c5a-be4f-a79b7611c69f)
+![image](https://github.com/user-attachments/assets/094c2d99-b9f7-4f33-8c42-1a420ae9af94)
+![image](https://github.com/user-attachments/assets/bbbe87bd-28e0-421f-901d-877bb8a7857e)
+
+
+
 ## **Installation**
 1. Clone this repository:  
    ```bash
